@@ -1,0 +1,11 @@
+/* styling our card  */
+
+.movie-card.movie-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Allow the card to stretch to fill the column */
+  background-color: #fff; /* Card background color */
+  border: 1px solid #ddd; /* Border for visual separation */
+  border-radius: 8px; /* Optional: Rounded corners */
+  overflow: hidden; /* To prevent any content from overflowing */
+}
