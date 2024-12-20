@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 import Movie from "./Movie";
 
 import { Row, Col, Container } from "react-bootstrap";
@@ -19,12 +19,14 @@ const MovieList = ({ movies }) => {
               lg={3}
               className="mb-4"
             >
-              <Movie
-                title={eachmovie.title}
-                description={eachmovie.description}
-                rating={eachmovie.rating}
-                Image={eachmovie.Image}
-              />
+              <Link to={`/eachmovie/${eachmovie.id}`} className="custom-link">
+                <Movie
+                  title={eachmovie.title}
+                  description={eachmovie.description}
+                  rating={eachmovie.rating}
+                  Image={eachmovie.Image}
+                />
+              </Link>
             </Col>
           );
         })}

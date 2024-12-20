@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 import movie from "./Movie";
 import { Container } from "react-bootstrap";
 import AddMovie from "./Components/AddMovie";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Description from "./Components/Description.jsx";
 
 // this is the main component that will hold all the other components
 // setting use state to hold the original movies and the filtered movies
@@ -44,16 +46,28 @@ function App() {
 
   // returning the components
   return (
-    <div className="bg-black">
-      <Container>
-        <AddMovie onAddMovie={addNewMovie} />
-        <Filter
-          onTitleChange={titleChangeHandler}
-          onRatingChange={ratingChangeHandler}
+    <Router>
+      <Routes>
+        {/* rendering html routes */}
+        <Route
+          path="/"
+          element={
+            <Container className="bg-black">
+              <AddMovie onAddMovie={addNewMovie} />
+              <Filter
+                onTitleChange={titleChangeHandler}
+                onRatingChange={ratingChangeHandler}
+              />
+              <MovieList movies={filteredMovies} />
+            </Container>
+          }
+        />{" "}
+        <Route
+          path="/eachmovie/:id"
+          element={<Description movies={originalMovies} />}
         />
-        <MovieList movies={filteredMovies} />
-      </Container>
-    </div>
+      </Routes>
+    </Router>
   );
 }
 
