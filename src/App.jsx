@@ -2,7 +2,7 @@ import MovieList from "./Components/MovieList";
 import React from "react";
 import Filter from "./Components/Filter";
 import { useState, useEffect } from "react";
-import movie from "./Movie";
+import movieList from "./Movie";
 import { Container } from "react-bootstrap";
 import AddMovie from "./Components/AddMovie";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -11,7 +11,7 @@ import Description from "./Components/Description.jsx";
 // this is the main component that will hold all the other components
 // setting use state to hold the original movies and the filtered movies
 function App() {
-  const [originalMovies, setOriginalMovies] = useState(movie);
+  const [originalMovies, setOriginalMovies] = useState(movieList);
   const [filteredMovies, setFilteredMovies] = useState(originalMovies);
   const [filterTitle, setFilterTitle] = useState("");
   const [filterRating, setFilterRating] = useState(0);

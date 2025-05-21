@@ -1,4 +1,4 @@
-const movie = [
+const movieList = [
   {
     id: 1,
     title: "Justice League Zack Snyder Cut",
@@ -85,4 +85,4 @@ const movie = [
   },
 ];
 
-export default movie;
+export default movieList;
